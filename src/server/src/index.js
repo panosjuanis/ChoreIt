@@ -1,4 +1,8 @@
-port = 3000;
+const app = require("./app");
 
-app.listen(port);
-console.log('Listening on port: ', port);
+require("./database");
+
+// starting the server
+app.listen(app.get("port"), () => {
+  console.log(`server on port ${app.get("port")}`);
+});
