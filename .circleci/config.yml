@@ -12,9 +12,11 @@ jobs:
       - run:
           name: install dependencies
           command: npm install --force	
+      -run:
+          name: nav to tests
+          command: cd src/server/
       - run:
           name: test
-          command: cd src/server/
           command: npm run test
 workflows:
   test_my_app:
