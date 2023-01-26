@@ -11,7 +11,7 @@ jobs:
       # install dependencies
       - run:
           name: install dependencies
-          command: npm install
+          command: npm --prefix ./src/server install
       - run:
           name: test
           command: npm --prefix ./src/server run test
