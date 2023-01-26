@@ -11,10 +11,8 @@ jobs:
       # install dependencies
       - run:
           name: install dependencies
-          command: npm install --force	
-      -run:
-          name: nav to tests
-          command: cd src/server/
+          command: npm install
+      # run test suite	
       - run:
           name: test
           command: npm run test
