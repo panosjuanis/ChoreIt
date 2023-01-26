@@ -7,16 +7,14 @@ jobs:
     docker:
       - image: cimg/node:16.11.1
     steps:
-      - checkout:
-          path: ~/ChoreIt/src/server
+      - checkout
       # install dependencies
       - run:
           name: install dependencies
           command: npm install
       - run:
-          working_directory: ~/src/server
           name: test
-          command: npm run test
+          command: npm --prefix ./src/server run test
 workflows:
   test_my_app:
     jobs:
