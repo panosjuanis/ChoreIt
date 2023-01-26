@@ -7,8 +7,9 @@ jobs:
     executor: node/default
     steps:
       - checkout
+      - run: npm install --force
       - node/install-packages:
-          pkg-manager: npm --force
+          pkg-manager: npm
       - run:
           command: npm run test
           name: Run tests
