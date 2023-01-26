@@ -4,7 +4,7 @@ orbs:
 
 jobs:
   build_and_test:
-    working_directory: ~src/server
+    working_directory: ~/src/server
     docker:
       - image: cimg/node:16.11.1
     steps:
@@ -13,7 +13,6 @@ jobs:
       - run:
           name: install dependencies
           command: npm install
-      # run test suite	
       - run:
           name: test
           command: npm run test
