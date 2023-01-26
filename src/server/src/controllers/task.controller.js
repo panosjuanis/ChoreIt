@@ -35,6 +35,21 @@ taskCtrl.editTask = async (req, res, next) => {
     res.json({ status: "Task Updated" });
 };
 
+taskCtrl.addUserToTask = async (req, res, next) => {
+    console.log("Adding user to task")
+    var id  = req.params.id;
+    var newUser = req.body.newUser;
+    console.log(newUser);
+    const task = await Task.findById(id);
+    if (task == null){
+        res.json("Task not found!");
+      }
+    task.participant_ids.push(newUser);
+    console.log(task.participant_ids);
+    await Task.findByIdAndUpdate(id, {$set: task}, {new: true});
+    res.json({ status: "Task Updated" });
+};
+
 taskCtrl.deleteTask = async (req, res, next) => {
   await Task.findByIdAndRemove(req.params.id);
   res.json({ status: "Task Deleted" });

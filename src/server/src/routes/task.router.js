@@ -10,6 +10,7 @@ router.get('/', taskCtr.getTasks)
 router.post('/', taskCtr.createTask)
 
 router.put('/:id', taskCtr.editTask)
+router.put('/addUser/:id', taskCtr.addUserToTask)
 
 router.delete('/:id', taskCtr.deleteTask)
 
