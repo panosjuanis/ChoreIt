@@ -16,8 +16,17 @@ Como framework de testing se ha escogido Jest, ya que tras mirar alguna guía pa
 
 Como gestor de paquetes se ha utilizado node package manager (npm), gestor que se utilizaba desde el inicio del proyecto y muy común en el stack con el que se trabaja.
 
+Como biblioteca de aserciones se utilizará la propria provista también por Jest, muy sencilla de implementar en js.
+
 Para lanzar las pruebas sencillamente debemos ejecutar el comando **npm run test**, que ejecutará un script definido en nuestro package.json 
 
 Una vez ejecutado obtendremos el siguiente output:
 
 ![Output de los tests](img/npm_run_test_output.png)
+
+
+Un ejemplo de una prueba contra la API sería:
+
+![GET Persons test](img/getPerson_test.png)
+
+Donde se testea la llamada GET de una lista de personas, se simula la llamada y si no se recibe el valor esperado, se lanza un error, de lo contrario se comunica que el test ha sido concluido satisfactoriamente
